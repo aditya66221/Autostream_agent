@@ -1,11 +1,11 @@
 # AutoStream AI Agent – Social-to-Lead Workflow
 
-## 🚀 Overview
+## Overview
 This project implements a GenAI-powered conversational agent for AutoStream, a SaaS platform for automated video editing. The agent can understand user intent, answer product-related queries using RAG, and capture high-intent leads through a structured workflow.
 
 ---
 
-## 🧠 Features
+## Features
 - Intent Detection (LLM-based using Groq – LLaMA 3.1)
 - RAG-based Knowledge Retrieval (JSON + LLM)
 - Lead Capture Tool Execution
@@ -14,7 +14,7 @@ This project implements a GenAI-powered conversational agent for AutoStream, a S
 
 ---
 
-## ⚙️ How to Run Locally
+## How to Run Locally
 
 ```bash
 cd autostream-agent
