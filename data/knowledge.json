@@ -1,4 +1,27 @@
 {
+  "company": {
+    "name": "AutoStream",
+    "description": "AutoStream is an AI-powered video creation assistant designed to help content creators create and manage video content more efficiently.",
+    "target_users": [
+      "YouTube creators",
+      "social media creators",
+      "video content teams"
+    ]
+  },
+  "product": {
+    "description": "AutoStream is an AI video assistant that helps creators streamline video content creation.",
+    "use_cases": [
+      "Video creation",
+      "AI-assisted captions",
+      "Content production",
+      "Video workflow automation"
+    ],
+    "platforms": [
+      "YouTube",
+      "Instagram",
+      "TikTok"
+    ]
+  },
   "pricing": {
     "basic": {
       "price": "$29/month",
@@ -12,6 +35,12 @@
       "features": "AI captions"
     }
   },
+  "features": [
+    "AI-assisted video creation",
+    "AI captions",
+    "Video workflow automation",
+    "Support for multiple creator platforms"
+  ],
   "policies": {
     "refund": "No refunds after 7 days",
     "support": "24/7 support only for Pro plan"

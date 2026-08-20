@@ -39,9 +39,9 @@ You are an intent classifier for AutoStream.
 Classify the user's message into exactly one of these categories:
 
 - greeting → casual greetings such as hi, hello, hey
-- pricing → questions about plans, pricing, cost, features, or policies
+- product_question → questions about AutoStream, its product, features, pricing, plans, policies, platforms, support, or how it works
 - high_intent → user wants to buy, try, subscribe, start, or shows clear interest in using AutoStream
-- other → anything else
+- other → unrelated questions
 
 IMPORTANT:
 If the user expresses a desire to buy, try, subscribe, or start using the product,
@@ -60,7 +60,7 @@ Return only the category name.
 
         intent = response.choices[0].message.content.strip().lower()
 
-        valid_intents = {"greeting", "pricing", "high_intent", "other"}
+        valid_intents = {"greeting", "product_question", "high_intent", "other"}
 
         # Handle occasional extra LLM text safely.
         for valid_intent in valid_intents:
@@ -128,7 +128,7 @@ Return only the category name.
             if intent == "greeting":
                 return "Hey 👋 Welcome to AutoStream! How can I help you?"
 
-            elif intent == "pricing":
+            elif intent == "product_question":
                 return get_answer(user_input)
 
             elif intent == "high_intent":
@@ -137,7 +137,11 @@ Return only the category name.
                 return "🔥 Awesome! Let's get you started.\nWhat's your name?"
 
             else:
-                return "I'm not sure I understand. Could you clarify your question?"
+                return (
+                    "I'm here to help with AutoStream. "
+                    "You can ask me about our features, pricing, "
+                    "supported platforms, or plans."
+                )
 
         except Exception as error:
             print(f"Agent error: {type(error).__name__}: {error}")
