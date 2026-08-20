@@ -1,24 +1,42 @@
-# AutoStream AI Agent – Social-to-Lead Workflow
+# AutoStream AI Agent
 
-## Overview
-This project implements a GenAI-powered conversational agent for AutoStream, a SaaS platform for automated video editing. The agent can understand user intent, answer product-related queries using RAG, and capture high-intent leads through a structured workflow.
+A GenAI-powered conversational agent for AutoStream, a fictional SaaS platform for automated video editing.
 
----
+The agent can understand user intent, answer product-related questions using a knowledge base, and capture high-intent leads through a multi-turn conversation workflow.
 
 ## Features
-- Intent Detection (LLM-based using Groq – LLaMA 3.1)
-- RAG-based Knowledge Retrieval (JSON + LLM)
-- Lead Capture Tool Execution
-- Multi-turn Conversation Memory
-- Streamlit Web UI
 
----
+- LLM-based intent detection
+- LLaMA 3.1 8B Instant through Groq
+- Context-augmented product knowledge retrieval
+- Multi-turn lead qualification
+- Email validation
+- Lead capture tool workflow
+- Streamlit chat interface
+- CLI interface for local testing
+- Environment-based API key management
+- Basic error handling
 
-## How to Run Locally
+## Architecture
 
-```bash
-cd autostream-agent
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-streamlit run app.py
+```text
+User
+ │
+ ▼
+Streamlit UI
+ │
+ ▼
+Agent
+ │
+ ├── Intent Detection ──► Groq / LLaMA 3.1
+ │
+ ├── Product Questions ──► Knowledge Base ──► Groq / LLaMA 3.1
+ │
+ └── High Intent
+       │
+       ▼
+   Lead Collection
+   Name → Email → Platform
+       │
+       ▼
+   Lead Capture Tool
